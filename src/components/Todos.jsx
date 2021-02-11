@@ -1,19 +1,24 @@
 import React from "react";
+import Todo from "./Todo";
 
 const Todos = () => {
+  const todos = [
+    {
+      text: "Belajar Bohong"
+    },
+    {
+      text: "Belajar Nipu"
+    },
+    {
+      text: "Belajar Sihir"
+    }
+  ];
+
   return (
     <section className="todos">
-      <div className="todo">
-        <span className="todo-text">Belajar Bohong</span>
-      </div>
-
-      <div className="todo">
-        <span className="todo-text">Belajar Nipu</span>
-      </div>
-
-      <div className="todo">
-        <span className="todo-text">Belajar Terus Capek</span>
-      </div>
+      {todos.map((todo) => {
+        return <Todo text={todo.text} />;
+      })}
     </section>
   );
 };
