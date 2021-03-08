@@ -8,7 +8,7 @@ const TodoForm = ({ addTodo, showForm }) => {
     e.preventDefault();
 
     if (!value) {
-      alert("blank");
+      alert("Tidak boleh kosong");
       return;
     }
 
