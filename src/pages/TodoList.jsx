@@ -7,16 +7,19 @@ import Todos from "../components/Todos";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   const addTodo = (value) => {
     const newTodos = [...todos, { text: value }];
     setTodos(newTodos);
   };
 
+  const showFormToggle = () => setShowForm(!showForm);
+
   return (
     <Paper>
-      <Header />
-      <TodoForm addTodo={addTodo} />
+      <Header showFormToggle={showFormToggle} />
+      <TodoForm addTodo={addTodo} showForm={showForm} />
       <Todos todos={todos} />
     </Paper>
   );
