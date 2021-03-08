@@ -24,7 +24,13 @@ const TodoForm = ({ addTodo, showForm }) => {
             type="text"
             className="add-input"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => {
+              if (e.target.value.length > 40) {
+                alert("Jumlah karakter maksimal 40");
+                return;
+              }
+              setValue(e.target.value);
+            }}
           />
           <button className="add-btn main-black-color">Submit</button>
         </form>
