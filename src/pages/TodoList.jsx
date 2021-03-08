@@ -26,11 +26,17 @@ const TodoList = () => {
     setTodos(newTodos);
   };
 
+  const clearTodos = () => setTodos([]);
+
   console.log(todos);
 
   return (
     <Paper>
-      <Header showFormToggle={showFormToggle} showForm={showForm} />
+      <Header
+        showFormToggle={showFormToggle}
+        showForm={showForm}
+        clearTodos={clearTodos}
+      />
       <TodoForm addTodo={addTodo} showForm={showForm} />
       <Todos todos={todos} completeTodo={completeTodo} />
     </Paper>
