@@ -26,7 +26,7 @@ const TodoList = () => {
     setTodos(newTodos);
   };
 
-  const clearTodos = () => setTodos([]);
+  const clearTodos = () => !showForm && setTodos([]);
 
   console.log(todos);
 
