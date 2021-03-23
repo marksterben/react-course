@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 
+import styles from "./todoform.module.css";
+
 const TodoForm = ({ addTodo, showForm }) => {
   const [value, setValue] = useState("");
 
@@ -18,11 +20,11 @@ const TodoForm = ({ addTodo, showForm }) => {
 
   if (showForm) {
     return (
-      <section className="add">
-        <form className="add-form" onSubmit={formSubmitHandler}>
+      <section className={styles.add}>
+        <form className={styles.addForm} onSubmit={formSubmitHandler}>
           <input
             type="text"
-            className="add-input"
+            className={styles.addInput}
             value={value}
             onChange={(e) => {
               if (e.target.value.length > 40) {
@@ -32,7 +34,7 @@ const TodoForm = ({ addTodo, showForm }) => {
               setValue(e.target.value);
             }}
           />
-          <button className="add-btn main-black-color">Submit</button>
+          <button className={styles.addBtn}>Submit</button>
         </form>
       </section>
     );
